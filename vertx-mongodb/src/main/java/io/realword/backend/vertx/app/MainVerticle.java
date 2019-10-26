@@ -1,4 +1,4 @@
-package io.realword.backend.vertx.vertx_mongodb;
+package io.realword.backend.vertx.app;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Promise;
