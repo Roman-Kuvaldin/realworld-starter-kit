@@ -16,3 +16,4 @@
 .DS_Store
 Thumbs.db
 /vertx-mongodb/nbproject/
+vertx-mongodb/nbactions.xml
