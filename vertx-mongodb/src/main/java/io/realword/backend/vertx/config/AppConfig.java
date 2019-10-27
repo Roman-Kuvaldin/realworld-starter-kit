@@ -39,11 +39,17 @@ public class AppConfig {
 
     public static String port(JsonObject config) {
         try {
-            return config.getString(ConfigKeyValues.APP_PORT.getKey());
+            String value = config.getString(ConfigKeyValues.APP_PORT.getKey());
+            if (value != null && !value.trim().isEmpty()) {
+                return value;
+            }
         } catch (Exception e) {
         }
         try {
-            return config.getDouble(ConfigKeyValues.APP_PORT.getKey()).toString();
+            Double value = config.getDouble(ConfigKeyValues.APP_PORT.getKey());
+            if (value != null && value.compareTo(0.0) > 0) {
+                return value.toString();
+            }
         } catch (Exception e) {
         }
         return ConfigKeyValues.APP_PORT.getValue();
