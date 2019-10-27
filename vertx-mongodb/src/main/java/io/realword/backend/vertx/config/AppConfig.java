@@ -38,9 +38,14 @@ public class AppConfig {
     } // END mongoDbUrl
 
     public static String port(JsonObject config) {
-        if (config == null) {
-            return ConfigKeyValues.APP_PORT.getValue();
+        try {
+            return config.getString(ConfigKeyValues.APP_PORT.getKey());
+        } catch (Exception e) {
         }
-        return config.getString(ConfigKeyValues.APP_PORT.getKey(), ConfigKeyValues.APP_PORT.getValue());
+        try {
+            return config.getDouble(ConfigKeyValues.APP_PORT.getKey()).toString();
+        } catch (Exception e) {
+        }
+        return ConfigKeyValues.APP_PORT.getValue();
     } // END mongoDbUrl
 } // END AppConfig
