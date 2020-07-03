@@ -4,3 +4,6 @@ ENV APP_PORT=8080
 EXPOSE $APP_PORT
 # Running app
 ENTRYPOINT ["java", "-jar", "/opt/apps/vertx-mongodb/vertx-mongodb.jar"]
+
+
+
